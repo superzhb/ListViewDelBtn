@@ -3,14 +3,9 @@ package com.example.mylistviewtest;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.mylistviewtest.MyListView.DelItemListener;
-
-import android.R.string;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -18,22 +13,12 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.example.mylistviewtest.MyListView.DelItemListener;
+
 public class MainActivity extends Activity {
 	private MyListView listView;
 	private myAdaptor adapter;
 	private List<String> strings = new ArrayList<String>();
-	private Handler handler = new Handler() {
-		public void handleMessage(Message msg) {
-			switch (msg.what) {
-			case 1:
-				ViewGroup view = (ViewGroup) msg.obj;
-				break;
-
-			default:
-				break;
-			}
-		};
-	};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
